@@ -6,6 +6,9 @@ type Props = {
   selectOperation: (operation: string) => void;
   selectDigit: (digit: string) => void;
   equalsFunc: () => void;
+  clearFunc: (notUsed: string) => void;
+  delFunc: (notUsed: string) => void;
+  percentFunc: (notUsed: string) => void;
 };
 
 function ButtonContainer(props: Props) {
@@ -14,17 +17,17 @@ function ButtonContainer(props: Props) {
       <OperationButton
         operation="AC"
         name="clear"
-        selectOperation={props.selectOperation}
+        selectOperation={props.clearFunc}
       />
       <OperationButton
         operation="C"
         name="delete"
-        selectOperation={props.selectOperation}
+        selectOperation={props.delFunc}
       />
       <OperationButton
         operation="%"
         name="percent"
-        selectOperation={props.selectOperation}
+        selectOperation={props.percentFunc}
       />
       <OperationButton
         operation="/"
