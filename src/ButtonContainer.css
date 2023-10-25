@@ -3,3 +3,79 @@
   padding: 5%;
   text-align: center;
 }
+
+.op-button {
+  padding: 5%;
+  text-align: center;
+  background-color: rgba(59, 0, 104, 0.6);
+  width: 22.5%;
+  height: 20%;
+  color: rgb(214, 214, 214);
+  border-radius: 1rem;
+  box-shadow: none;
+  border: 2px solid rgb(51, 51, 51);
+  margin: 0.25%;
+  font-size: 1em;
+}
+
+.op-button:hover,
+.digit-button:hover,
+#zero:hover,
+#equals:hover {
+  border: 2px solid rgb(180, 180, 180);
+}
+
+.op-button:focus:active,
+.digit-button:hover:active,
+#zero:hover:active,
+#equals:hover:active,
+#clear:focus:active {
+  background-color: rgb(60, 60, 60);
+}
+
+#clear {
+  background-color: rgb(110, 0, 0);
+  width: 30%;
+}
+
+.digit-button {
+  padding: 5%;
+  text-align: center;
+  background-color: rgba(79, 0, 139, 0.6);
+  width: 25%;
+  height: 20%;
+  color: rgb(214, 214, 214);
+  border-radius: 1rem;
+  box-shadow: none;
+  border: 2px solid rgb(51, 51, 51);
+  margin: 0.25%;
+  font-size: 1em;
+}
+
+#zero {
+  padding: 5%;
+  text-align: center;
+  background-color: rgba(79, 0, 139, 0.6);
+  width: 50%;
+  height: 20%;
+  color: rgb(214, 214, 214);
+  border-radius: 1rem;
+  box-shadow: none;
+  border: 2px solid rgb(51, 51, 51);
+  margin: 0.25%;
+  font-size: 1em;
+}
+
+#equals {
+  padding: 5%;
+  text-align: center;
+  background-color: rgb(110, 0, 0);
+  width: 22.5%;
+  height: 20%;
+  color: rgb(214, 214, 214);
+  border-radius: 1rem;
+  box-shadow: none;
+  border: 2px solid rgb(51, 51, 51);
+  margin: 0.25%;
+  font-size: 1em;
+}

@@ -7,11 +7,10 @@
 
 .container {
   width: 35vw;
-  height: 70vh;
   background-color: rgb(80, 80, 80);
   margin: auto;
-  padding: 3%;
-  border-radius: 5%;
+  padding: 1.5%;
+  border-radius: 1rem;
 }
 
 #display {
@@ -21,6 +20,7 @@
   width: auto;
   height: auto;
   font-size: 3rem;
-  padding: 5%;
+  padding: 3%;
   border-radius: 1rem;
+  margin: 0.25%;
 }
