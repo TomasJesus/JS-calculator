@@ -18,36 +18,32 @@ function App() {
     } else {
       setCurrentValue(`${currentValue}${digit}`);
     }
-
     setOverwrite(false);
   };
 
   const calculate = () => {
-    if (!preValue || !currOperation) return currentValue;
+    if (!preValue || !currOperation) return parseFloat(currentValue);
 
     const curr = parseFloat(currentValue);
     const prev = parseFloat(preValue);
 
-    let result;
-
     switch (currOperation) {
       case "+":
-        result = prev + curr;
-        break;
+        setOperation("");
+        return prev + curr;
       case "-":
-        result = prev - curr;
-        break;
+        setOperation("");
+        return prev - curr;
       case "x":
-        result = prev * curr;
-        break;
+        setOperation("");
+        return prev * curr;
       case "/":
-        if (curr !== 0) {
-          result = prev / curr;
-        } else {
-          return "Error"; // Handle division by zero.
-        }
+        setOperation("");
+        return prev / curr;
+      default:
+        setOperation("");
+        return curr;
     }
-    return result;
   };
 
   const equals = () => {
@@ -59,6 +55,7 @@ function App() {
   };
 
   const clear = (notUsed: string) => {
+    console.log("ignore " + notUsed);
     setCurrentValue("0");
     setPreValue("");
     setOperation("");
@@ -66,16 +63,18 @@ function App() {
   };
 
   const del = (notUsed: string) => {
+    console.log("ignore " + notUsed);
     setCurrentValue("0");
     setOverwrite(true);
   };
 
   const percent = (notUsed: string) => {
+    console.log("ignore " + notUsed);
     const curr = parseFloat(currentValue);
     setCurrentValue((curr / 100).toString());
   };
 
-  const selectOperation = (operation: string) => {
+  const selectOperation = (newOperation: string) => {
     if (preValue) {
       const val = calculate();
       setCurrentValue(`${val}`);
@@ -83,7 +82,7 @@ function App() {
     } else {
       setPreValue(currentValue);
     }
-    setOperation(operation);
+    setOperation(newOperation);
     setOverwrite(true);
   };
 
