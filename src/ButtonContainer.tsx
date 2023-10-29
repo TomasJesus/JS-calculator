@@ -3,64 +3,63 @@ import DigitButton from "./DigitButton";
 import OperationButton from "./OperationButton";
 
 type Props = {
-  selectOperation: (operation: string) => void;
-  selectDigit: (digit: string) => void;
-  equalsFunc: () => void;
-  clearFunc: (notUsed: string) => void;
-  delFunc: (notUsed: string) => void;
-  percentFunc: (notUsed: string) => void;
+  ButtonPress: (button: string) => void;
 };
 
 function ButtonContainer(props: Props) {
+  const equalsFunc = () => {
+    props.ButtonPress("=");
+  };
+
   return (
     <div className="button-container">
       <OperationButton
-        operation="AC"
+        operation="C"
         name="clear"
-        selectOperation={props.clearFunc}
+        selectOperation={props.ButtonPress}
       />
       <OperationButton
-        operation="C"
-        name="delete"
-        selectOperation={props.delFunc}
+        operation="+/-"
+        name="negative"
+        selectOperation={props.ButtonPress}
       />
       <OperationButton
         operation="%"
         name="percent"
-        selectOperation={props.percentFunc}
+        selectOperation={props.ButtonPress}
       />
       <OperationButton
         operation="/"
         name="divide"
-        selectOperation={props.selectOperation}
+        selectOperation={props.ButtonPress}
       />
-      <DigitButton digit="7" name="seven" selectDigit={props.selectDigit} />
-      <DigitButton digit="8" name="eight" selectDigit={props.selectDigit} />
-      <DigitButton digit="9" name="nine" selectDigit={props.selectDigit} />
+      <DigitButton digit="7" name="seven" selectDigit={props.ButtonPress} />
+      <DigitButton digit="8" name="eight" selectDigit={props.ButtonPress} />
+      <DigitButton digit="9" name="nine" selectDigit={props.ButtonPress} />
       <OperationButton
-        operation="x"
+        operation="*"
         name="multiply"
-        selectOperation={props.selectOperation}
+        selectOperation={props.ButtonPress}
       />
-      <DigitButton digit="4" name="four" selectDigit={props.selectDigit} />
-      <DigitButton digit="5" name="five" selectDigit={props.selectDigit} />
-      <DigitButton digit="6" name="six" selectDigit={props.selectDigit} />
+      <DigitButton digit="4" name="four" selectDigit={props.ButtonPress} />
+      <DigitButton digit="5" name="five" selectDigit={props.ButtonPress} />
+      <DigitButton digit="6" name="six" selectDigit={props.ButtonPress} />
       <OperationButton
         operation="+"
         name="add"
-        selectOperation={props.selectOperation}
+        selectOperation={props.ButtonPress}
       />
-      <DigitButton digit="1" name="one" selectDigit={props.selectDigit} />
-      <DigitButton digit="2" name="two" selectDigit={props.selectDigit} />
-      <DigitButton digit="3" name="three" selectDigit={props.selectDigit} />
+      <DigitButton digit="1" name="one" selectDigit={props.ButtonPress} />
+      <DigitButton digit="2" name="two" selectDigit={props.ButtonPress} />
+      <DigitButton digit="3" name="three" selectDigit={props.ButtonPress} />
       <OperationButton
         operation="-"
         name="subtract"
-        selectOperation={props.selectOperation}
+        selectOperation={props.ButtonPress}
       />
-      <DigitButton digit="0" name="zero" selectDigit={props.selectDigit} />
-      <DigitButton digit="." name="decimal" selectDigit={props.selectDigit} />
-      <button id="equals" onClick={props.equalsFunc}>
+      <DigitButton digit="0" name="zero" selectDigit={props.ButtonPress} />
+      <DigitButton digit="." name="decimal" selectDigit={props.ButtonPress} />
+      <button id="equals" onClick={equalsFunc}>
         =
       </button>
     </div>

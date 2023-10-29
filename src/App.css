@@ -15,12 +15,19 @@
 
 #display {
   background-color: rgb(57, 57, 57);
-  color: rgb(214, 214, 214);
   text-align: end;
+  min-height: 3rem;
   width: auto;
   height: auto;
   font-size: 3rem;
   padding: 3%;
+  padding-top: 1%;
+  padding-bottom: 1%;
   border-radius: 1rem;
   margin: 0.25%;
+}
+
+.expression {
+  color: gray;
+  font-size: 1.5rem;
 }

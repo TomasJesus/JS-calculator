@@ -25,7 +25,7 @@
   border: 2px solid rgb(180, 180, 180);
 }
 
-.op-button:focus:active,
+.op-button:hover:active,
 .digit-button:hover:active,
 #zero:hover:active,
 #equals:hover:active,
